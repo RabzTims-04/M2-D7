@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <!--
         "Selectors"
         Selectors helps targeting elements in the DOM.
-        They are useful bot on CSS & JS.
+        They are useful both on CSS & JS.
         Here you'll find a lot of exercises about it.
 
         IMPORTANT: you can't ADD classes or IDs to help you out! 
@@ -17,18 +16,96 @@
 
   <head>
     <style>
-      /*
-            EX1) Write a selector to target the title of the page
+      
+           /*  EX1) Write a selector to target the title of the page */
+
+           h1{
+               color: red;
+               }
+            
+            /*
             EX2) Write a selector to target every children of the navbar
+            */
+
+            nav a{
+                border: 1px dotted blueviolet; 
+            }
+
+            /* nav>a{
+
+            } */
+
+            /*
             EX3) Write a selector to target the "continue reading..." inside the jumbotron
+            */
+
+            .jumbotron p>a{
+                padding: 5px;
+                border: 1px solid white;
+            }
+            /*
             EX4) Write a selector to target the first blogpost
+            */
+
+            main >.row >.blog-main> h3+div{
+                border: 2px solid red;
+            }
+
+            /*
             EX5) Write a selector to target the "even" links in the navbar
+
+            */
+
+            nav>a:nth-child(2n){
+                background-color: yellow;                
+            }
+            /*
             EX6) Write a selector to target the last blog post
+            */
+
+            main >.row >.blog-main>div:last-of-type{
+                border: 2px solid rgb(0, 255, 0);
+            }
+            
+            /*
             EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives )
+            */
+
+            aside div:nth-child(2) >ol li a{
+              color: hotpink;
+            }
+
+            /*
             EX8) Write a selector to target the second post author
+            */ 
+
+            main .row .blog-main div:nth-child(3) p:first-of-type>a{
+                border: 2px dotted rgb(47, 0, 255);
+                border-radius: 20%;
+            }
+
+            /*
             EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
+            */
+
+            footer p:last-of-type a{
+              color:rgba(226, 13, 13, 0.767);
+              border: 1px dotted red;
+              border-radius: 30%;
+            }
+            /*
             EX10) Write a selector to target the footer
-        */
+            */
+            main ~*{
+              border: 2px solid black;
+              background-color: rgb(151, 205, 207);
+            }
+
+            /* JavaScript classes */
+
+            .blackBack{
+              background-color: cornflowerblue!important;
+            }
     </style>
     <meta charset="utf-8" />
     <meta
@@ -375,13 +452,13 @@
           </div>
           <!-- /.blog-post -->
 
-          <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
+          <nav class="blog-pagination" id='stay'>
+            <a class="btn btn-outline-primary" onclick="oldBlog()" href="#stay">Older</a>
             <a
-              class="btn btn-outline-secondary disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
+              class="btn btn-outline-secondary"
+              onclick="newBlog()"
+              href="#stay"
+             
               >Newer</a
             >
           </nav>
@@ -442,10 +519,16 @@
       </p>
     </footer>
 
-    <script>
+    <script src="script.js">
+      
       /*
         JS Exercises
         EX11) Write a function to add a new link into the navbar
+         */
+
+
+
+         /* 
         EX12) Write a function to change the color of the main title
         EX13) Write a function to change the background of the jumbotron
         EX14) Write a function to remove all the links under "Elsewhere"
