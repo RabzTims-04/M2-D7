@@ -80,14 +80,47 @@ function removeFiftyChar(){
     bodyParent.appendChild(newButton) 
 } */
 
+/* function newBlog(){
+    const mainBlog = document.querySelector('.blog-main')
+    const nav = document.querySelector('.blog-pagination')
+    const div = document.createElement('div')
+    const br = document.createElement('br')
+    div.classList.add('blog-post')
+    const h2 = document.createElement('h2')
+    h2.classList.add('blog-post-title')
+    h2.innerText = 'New Blog Post'
+    div.appendChild(h2)
+
+    
+    
+    mainBlog.insertBefore(div, nav)
+    mainBlog.insertBefore(div, br)
+} */
+/* div.innerHTML += `<br><div class="blog-post">
+    <h2 class="blog-post-title">New Blog Post</h2></div><br>` */
+
+/* function newBlog(){
+    const mainBlog = document.querySelector('.blog-main')
+    mainBlog.innerHTML += `<br><div class="blog-post">
+    <h2 class="blog-post-title">New Blog Post</h2></div><br>`
+}
+ */
+
 function newBlog(){
+    const nav = document.querySelector('.blog-pagination')
+    nav.insertAdjacentHTML('beforebegin',`<br><div class="blog-post">
+    <h2 class="blog-post-title">New Blog Post</h2></div><br>`)
+}
+
+
+/* function newBlog(){
     const mainBlog = document.querySelector('.blog-main')
     const div = document.createElement('div')
     div.innerHTML += `<br><div class="blog-post">
     <h2 class="blog-post-title">New Blog Post</h2></div><br>`
     const nav = document.querySelector('.blog-pagination')
     mainBlog.insertBefore(div, nav)
-}
+} */
 /*EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post  */
 /* function olderButton(){
     let oldButton = document.createElement('button')
