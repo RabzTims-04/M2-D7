@@ -82,8 +82,11 @@ function removeFiftyChar(){
 
 function newBlog(){
     const mainBlog = document.querySelector('.blog-main')
-    mainBlog.innerHTML += `<br><div class="blog-post">
+    const div = document.createElement('div')
+    div.innerHTML += `<br><div class="blog-post">
     <h2 class="blog-post-title">New Blog Post</h2></div><br>`
+    const nav = document.querySelector('.blog-pagination')
+    mainBlog.insertBefore(div, nav)
 }
 /*EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post  */
 /* function olderButton(){
@@ -117,8 +120,7 @@ function authorHover(){
     
 }
 
-window.onload = function(){
-    
+window.onload = function(){   
     
     authorHover()
 }
